@@ -27,6 +27,7 @@ def replace(file_path, new_file_path, new_root_path, old_root_path=DEFAULT_ROOT_
 
 if __name__=="__main__":
     current_working_dir = getcwd()
-    replace("test.txt", "test_fixed.txt", current_working_dir)
-    replace("train.txt", "train_fixed.txt", current_working_dir)
-    replace("val.txt", "val_fixed.txt", current_working_dir)
+    chosen_dir = current_working_dir.rstrip("/CamVid")
+    replace("test.txt", "test_fixed.txt", chosen_dir)
+    replace("train.txt", "train_fixed.txt", chosen_dir)
+    replace("val.txt", "val_fixed.txt", chosen_dir)
