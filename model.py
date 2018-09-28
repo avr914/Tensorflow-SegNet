@@ -401,6 +401,8 @@ def training(FLAGS, is_finetune=False):
       acc_summary = tf.summary.scalar("test_accuracy", acc_pl)
       iu_summary = tf.summary.scalar("Mean_IU", iu_pl)
 
+      tf.train.write_graph(sess.graph_def, path_to_model_pb, 'saved_model.pb', as_text=False)
+
       for step in range(startstep, startstep + max_steps):
         image_batch ,label_batch = sess.run([images, labels])
         # since we still use mini-batches in validation, still set bn-layer phase_train = True
