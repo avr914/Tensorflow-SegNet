@@ -401,6 +401,7 @@ def training(FLAGS, is_finetune=False):
       acc_summary = tf.summary.scalar("test_accuracy", acc_pl)
       iu_summary = tf.summary.scalar("Mean_IU", iu_pl)
 
+      path_to_model_pb = "./"
       tf.train.write_graph(sess.graph_def, path_to_model_pb, 'saved_model.pb', as_text=False)
 
       for step in range(startstep, startstep + max_steps):
